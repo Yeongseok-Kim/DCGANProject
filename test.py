@@ -8,8 +8,8 @@ if __name__=='__main__':
     net=model.Generator()
 
     # 네트워크 데이터 로드
-    # color_model_epoch_1.pth 수정해주세요
-    load_net='./color_model_epoch_1.pth'
+    # model_epoch_1.pth 수정해주세요
+    load_net='./model_epoch_1.pth'
     net.load_state_dict(torch.load(load_net))
 
     with torch.no_grad():
