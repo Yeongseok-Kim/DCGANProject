@@ -14,8 +14,8 @@ if __name__=='__main__':
     device='cuda' if torch.cuda.is_available() else 'cpu'
     
     # 트레이닝 데이터 로드
-    # './data/Hands/' 데이터 경로로 수정해주세요
-    train_data=dataset.MakeDataset('./data/Hands/')
+    # './data/female/' 데이터 경로로 수정해주세요
+    train_data=dataset.MakeDataset('./train/female/')
     train_set=DataLoader(train_data,batch_size,True)
     
     # 트레이닝
@@ -65,6 +65,6 @@ if __name__=='__main__':
             
         print('epoch',epoch+1,'is over.')
         
-        torch.save(g_net.state_dict(),'color_model_epoch_%d.pth'%(epoch+1))
+        torch.save(g_net.state_dict(),'model_epoch_%d.pth'%(epoch+1))
         
     print('Learning Finished!')
